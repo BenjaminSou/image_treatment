@@ -52,16 +52,14 @@ class file_downloader():
         tagger = XattrFile(file_path)
         if self.data[name]["actions"]:
             tagger.tags["actions"] = ",".join(self.data[name]["actions"])
-        if self.data[name]["crop"]:
-            for label in self.data[name]["crop"]:
-                tagger.tags[label] = self.data[name]["crop"][label]
-            tagger.commit()
+        self.load_parameters_from("crop", tagger, name)
+        tagger.commit()
         tagger.copy("/home/mfdata/var/in/incoming/%s" % file_path[6:])
 
     def load_parameters_from(self, key, xaf, name):
-        if self.data[key]:
+        if self.data[name][key]:
             for label in self.data[name][key]:
-                xaf.tags[key] = self.data[name][key]
+                xaf.tags[label] = self.data[name][key][label]
 
     def run(self):
         """
