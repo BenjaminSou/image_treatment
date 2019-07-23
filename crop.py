@@ -5,6 +5,7 @@ from PIL import Image
 from xattrfile import XattrFile
 import os
 
+
 class CropperMainStep(
         AcquisitionStep):
 
@@ -27,23 +28,32 @@ class CropperMainStep(
         except ValueError as e:
             print(e, "(wrong crop var type)")
         # Cropping part
+        imageObject = Image.open(input_file.filepath)
         if x + y + w + h:
-            imageObject = Image.open(input_file.filepath)
             output = "cropped_%s" % (input_file.
                                      tags["first.core.original_basename"]
                                      .decode('utf-8'))
-            cropped = imageObject.crop((x, y, w, h))
+            try:
+                cropped = imageObject.crop((x, y, w, h))
+            except OSError:
+                truncated_file_name = "truncated_%s"\
+                                      % (input_file.
+                                         tags["first.core.original_basename"]
+                                         .decode('utf-8'))
+                imageObject.save("/home/mfdata/plugins/image_treatment/"
+                                 "truncated_files/%s" % truncated_file_name)
+                imageObject.close()
+                print("\\\\\\\\\\\\\\\\\\\\\\\\\\Error : truncated file \
+                      sent to truncated_files dir//////////////////////////")
+                return 1
             cropped.save(output, format="jpeg")
+            cropped.close()
 
         # Xattr part
             output_attr = XattrFile(output)
             for key in input_file.tags:
                 output_attr.tags[key] = input_file.tags[key]
         # r=root, d=directories, f = files
-            for r, d, f in os.walk("/home/mfdata/var/in/tmp/cropper.crop/",
-                                   topdown=False):
-                for files in f:
-                    print(os.path.join(r, files))
             if all(key in input_file.tags for key in (b"crop_x", b"crop_y",
                                                       b"crop_width",
                                                       b"cropp_height")):
@@ -55,10 +65,9 @@ class CropperMainStep(
             output_attr.commit()
             output_attr.move_or_copy("/home/mfdata/var/in/incoming/%s"
                                      % (output))
-            print("%s added to incoming successfully"
-                  % (output))
         else:
             print("No crop options")
+        imageObject.close()
 
 
 if __name__ == "__main__":

@@ -48,6 +48,7 @@ class file_downloader():
         Add tags to the given file.
 
         Attention, json tag can't have anything different from strings
+        Use load_parameters_from to get dict in json.
         """
         tagger = XattrFile(file_path)
         if self.data[name]["actions"]:

@@ -17,7 +17,7 @@ class CropperMainStep(
     def hello_world(self, at):
         at.tags["actions"] = \
             ",".join((at.tags["actions"].decode('utf-8')).split(",")[1:])
-        print(at.tags["actions"])
+        self.info("xattrfile.tags = %s" % at.tags["actions"])
         at.move_or_copy("/home/mfdata/var/in/incoming/placed_%s"
                         % (at.tags["first.core.original_basename"]))
 
