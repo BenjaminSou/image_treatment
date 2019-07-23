@@ -1,0 +1,11 @@
+__pycache__/
+config.ini~
+crontab
+extra_unused/
+files/
+local/
+python3_virtualenv_sources/
+real.py
+truncated_files/
+bin/main.py.*
+.*
