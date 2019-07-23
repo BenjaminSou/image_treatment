@@ -1,0 +1,52 @@
+{
+    "Les-Littes-A72-PR2+170":{
+    "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1059.thumbnail.jpg",
+    "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
+    "geolocalisation": "45.450559,4.419708",
+    "crop":{
+        "crop_x": "0",
+        "crop_y": "30",
+        "crop_width": "240",
+        "crop_height": "180"
+    },
+    "actions": ["crop", "place", "your", "action", "here"]
+    },
+
+    "Valvert-A6-PR451+372":
+    {
+    "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1033.thumbnail.jpg",
+    "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
+    "geolocalisation": "45.773125,4.786751",
+    "crop":{
+        "crop_x": "0",
+        "crop_y": "30",
+        "crop_width": "240",
+        "crop_height": "180" },
+    "actions": ["crop"]
+    },
+
+    "Pic-de-Bard":{
+    "url": "http://www.meteobard.fr/Pixxerbase/Image%20Fixe/image.jpg",
+    "http_referer": "",
+    "geolocalisation": "45.591021,4.002118",
+    "crop":{
+        "crop_x": "0",
+        "crop_y": "30",
+        "crop_width": "768",
+        "crop_height": "576"},
+    "actions": ["crop", "your", "action", "here"]
+    },
+
+    "Auxerre-N6-PR83+500":
+    {
+    "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1037.thumbnail.jpg",
+    "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
+    "geolocalisation": "45.773125,4.786751",
+    "crop":{
+        "crop_x": "0",
+        "crop_y": "0",
+        "crop_width": "240",
+        "crop_height": "160" },
+    "actions": ["crop"]
+    }
+}
