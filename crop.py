@@ -3,7 +3,6 @@
 from acquisition import AcquisitionStep
 from PIL import Image
 from xattrfile import XattrFile
-import os
 
 
 class CropperMainStep(
@@ -43,8 +42,8 @@ class CropperMainStep(
                 imageObject.save("/home/mfdata/plugins/image_treatment/"
                                  "truncated_files/%s" % truncated_file_name)
                 imageObject.close()
-                print("\\\\\\\\\\\\\\\\\\\\\\\\\\Error : truncated file \
-                      sent to truncated_files dir//////////////////////////")
+                print("\\\\\\\\\\\\\\\\\\\\\\\\\\Error : truncated file "
+                      "sent to truncated_files dir//////////////////////////")
                 return 1
             cropped.save(output, format="jpeg")
             cropped.close()

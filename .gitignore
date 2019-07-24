@@ -1,13 +1,17 @@
+# Specific directory to exclude:
 __pycache__/
-config.ini~
-crontab
 extra_unused/
 files/
 local/
 python3_virtualenv_sources/
-real.py
 truncated_files/
 
+# Specific files to exclude:
+config.ini~
+crontab
+real.py
+
+# Specific files types to exclude:
 .*
 *.sw*
 
