@@ -1,5 +1,6 @@
 {
-    "Les-Littes-A72-PR2+170":{
+    "Les-Littes-A72-PR2+170":
+    {
     "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1059.thumbnail.jpg",
     "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
     "geolocalisation": "45.450559,4.419708",
@@ -25,7 +26,8 @@
     "actions": ["crop"]
     },
 
-    "Pic-de-Bard":{
+    "Pic-de-Bard":
+    {
     "url": "http://www.meteobard.fr/Pixxerbase/Image%20Fixe/image.jpg",
     "http_referer": "",
     "geolocalisation": "45.591021,4.002118",
@@ -44,9 +46,9 @@
     "geolocalisation": "45.773125,4.786751",
     "crop":{
         "crop_x": "0",
-        "crop_y": "0",
+        "crop_y": "20",
         "crop_width": "240",
-        "crop_height": "160" },
+        "crop_height": "140" },
     "actions": ["crop", "place"]
     }
 }

@@ -5,6 +5,7 @@ files/
 local/
 python3_virtualenv_sources/
 truncated_files/
+bad_processed_files/
 
 # Specific files to exclude:
 config.ini~
