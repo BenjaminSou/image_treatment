@@ -10,6 +10,7 @@ truncated_files/
 config.ini~
 crontab
 real.py
+header-files-4works.vim
 
 # Specific files types to exclude:
 .*
