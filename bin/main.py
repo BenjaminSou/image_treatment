@@ -33,7 +33,7 @@ class file_downloader():
             request = requests.get(url, timeout=20)
         if request.status_code == 200:
             if request.content != self.file[name]:
-                path = "files/%s_%s.jpg" % (name, now)
+                path = "files/got/%s_%s.jpg" % (name, now)
                 with open(path, "wb") as filer:
                     self.file[name] = request.content
                     filer.write(self.file[name])
@@ -48,13 +48,14 @@ class file_downloader():
         Add tags to the given file.
 
         Attention, json tag can't have anything different from strings
+        Use load_parameters_from to get dict in json.
         """
         tagger = XattrFile(file_path)
         if self.data[name]["actions"]:
             tagger.tags["actions"] = ",".join(self.data[name]["actions"])
         self.load_parameters_from("crop", tagger, name)
         tagger.commit()
-        tagger.copy("/home/mfdata/var/in/incoming/%s" % file_path[6:])
+        tagger.copy("/home/mfdata/var/in/incoming/%s" % file_path[10:])
 
     def load_parameters_from(self, key, xaf, name):
         if self.data[name][key]:
