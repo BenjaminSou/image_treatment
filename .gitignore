@@ -1,12 +1,11 @@
 # Specific directory to exclude:
 __pycache__/
 extra_unused/
-files/cropped/*
-files/got/*
 local/
-python3_virtualenv_sources/
-truncated_files/
-bad_processed_files/
+cropped/*
+got/*
+truncated_files/*
+bad_processed_files/*
 
 # Specific files to exclude:
 config.ini~
@@ -15,7 +14,4 @@ real.py
 header-files-4works.vim
 
 # Specific files types to exclude:
-.*
 *.sw*
-
-!.gitignore
