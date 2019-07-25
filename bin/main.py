@@ -60,6 +60,8 @@ class file_downloader(AcquisitionStep):
         tagger = XattrFile(file_path)
         if self.data[name]["actions"]:
             tagger.tags["actions"] = ",".join(self.data[name]["actions"])
+        else:
+            tagger.tags["actions"] = ""
         self.load_parameters_from("crop", tagger, name)
         tagger.commit()
         tagger.copy("/home/mfdata/var/in/incoming/%s" % file_path[10:])

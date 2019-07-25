@@ -1,4 +1,13 @@
 {
+    "Luxembourg-A1":
+    {
+    "url": "http://www.cita.lu/info_trafic/cameras/images/cccam_95.jpg",
+    "http_referer": "",
+    "geolocalisation": "49.636769,6.179700",
+    "crop":{},
+    "actions": []
+    },
+
     "Les-Littes-A72-PR2+170":
     {
     "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1059.thumbnail.jpg",
