@@ -36,9 +36,9 @@ class CropperMainStep(
                                        % (self.original_file_name))
             self.error("ERROR opening %s (%s), transfered to "
                        "bad_processed_files"
-                       % (input_file.path, bad_processed_file_name))
+                       % (input_file.filepath, bad_processed_file_name))
             imageObject.save("/home/mfdata/plugins/image_treatment/bad_"
-                             "processeed_files%s" % (bad_processed_file_name))
+                             "processed_files%s" % (bad_processed_file_name))
             return 1
         if x + y + w + h:
             output = "cropped_%s" % (self.original_file_name)

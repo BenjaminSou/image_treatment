@@ -11,7 +11,8 @@ from datetime import datetime
 
 class file_downloader(AcquisitionStep):
 
-    plugin_name = "main_image_treatment"
+    plugin_name = "image_treatment"
+    plugin_step_name = "main"
 
     def __init__(self):
         """Initialization: self.link needs the http request you seek."""
@@ -19,6 +20,8 @@ class file_downloader(AcquisitionStep):
         self.file = dict()
         for name in self.data:
             self.file[name] = ""
+
+        self.log_creation = ["File(s) created: "]
 
     def get_json(self):
         """Import information in file urls."""
@@ -28,6 +31,7 @@ class file_downloader(AcquisitionStep):
     def http_request(self, url, name, header=None):
         """Create new file from http get if not already existing."""
         now = datetime.now().strftime("%m_%d_%Y_%H:%M:%S")
+
         if header:
             request = requests.Session()
             request.headers.update({'referer': header})
@@ -41,7 +45,7 @@ class file_downloader(AcquisitionStep):
                     self.file[name] = request.content
                     filer.write(self.file[name])
                     self.add_tags_and_copy(name, path)
-                    self.info("File %s_%s.jpg created" % (name, now))
+                    self.log_creation.append(name)
         else:
             self.warning("Error: request status = %s for url %s\nheader = %s"
                          % (request.status_code, url, header))
@@ -73,13 +77,14 @@ class file_downloader(AcquisitionStep):
         get jpg images.
         """
         while True:
-            print("\n--- New image downloading loop ---")
             for data in self.data:
                 if self.data[data]["http_referer"]:
                     self.http_request(self.data[data]["url"], data,
                                       self.data[data]["http_referer"])
                 else:
                     self.http_request(self.data[data]["url"], data)
+            self.info(self.log_creation[0] + ", ".join(self.log_creation[1:]))
+            self.log_creation = [self.log_creation[0]]
             sleep(60)
 
 
