@@ -1,7 +1,8 @@
 # Specific directory to exclude:
 __pycache__/
 extra_unused/
-files/
+files/cropped/*
+files/got/*
 local/
 python3_virtualenv_sources/
 truncated_files/
