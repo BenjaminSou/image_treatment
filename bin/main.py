@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 
+from acquisition import AcquisitionStep
 import json
 import requests
 from xattrfile import XattrFile
@@ -8,7 +9,9 @@ from time import sleep
 from datetime import datetime
 
 
-class file_downloader():
+class file_downloader(AcquisitionStep):
+
+    plugin_name = "main_image_treatment"
 
     def __init__(self):
         """Initialization: self.link needs the http request you seek."""
@@ -38,10 +41,10 @@ class file_downloader():
                     self.file[name] = request.content
                     filer.write(self.file[name])
                     self.add_tags_and_copy(name, path)
-                    print("File %s_%s.jpg created" % (name, now))
+                    self.info("File %s_%s.jpg created" % (name, now))
         else:
-            print("Error: request status = %s for url %s\nheader = %s"
-                  % (request.status_code, url, header))
+            self.warning("Error: request status = %s for url %s\nheader = %s"
+                         % (request.status_code, url, header))
 
     def add_tags_and_copy(self, name, file_path):
         """
@@ -70,7 +73,7 @@ class file_downloader():
         get jpg images.
         """
         while True:
-            print("\n--- New image downloading loop beginning ---")
+            print("\n--- New image downloading loop ---")
             for data in self.data:
                 if self.data[data]["http_referer"]:
                     self.http_request(self.data[data]["url"], data,
