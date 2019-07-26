@@ -32,12 +32,19 @@ class file_downloader(AcquisitionStep):
         """Create new file from http get if not already existing."""
         now = datetime.now().strftime("%m_%d_%Y_%H:%M:%S")
 
+        request = requests.Session()
         if header:
-            request = requests.Session()
             request.headers.update({'referer': header})
-            request = request.get(url, timeout=20)
-        else:
-            request = requests.get(url, timeout=20)
+        try:
+            request = request.get(url, timeout=2)
+        except (TimeoutError,
+                requests.exceptions.Timeout,
+                requests.exceptions.ConnectTimeout,
+                requests.exceptions.ReadTimeout):
+            self.warning('TIMEOUT: too much time to access "%s"' % url)
+            return 1
+        except requests.exceptions.ConnectionError:
+            self.error('ConnectionError with "%s"' % url)
         if request.status_code == 200:
             if request.content != self.file[name]:
                 path = "files/got/%s_%s.jpg" % (name, now)

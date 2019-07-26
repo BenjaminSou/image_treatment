@@ -59,5 +59,19 @@
         "crop_width": "240",
         "crop_height": "140" },
     "actions": ["crop", "place"]
+    },
+
+    "Argentina-Chapelco":
+    {
+    "url": "https://www.snow-forecast.com/webcams/Chapelco.jpg",
+    "http_referer": "",
+    "location": "-40.197717,-71.319058",
+    "crop":{
+        "crop_x": "0",
+        "crop_y": "0",
+        "crop_width": "426",
+        "crop_height": "325"
+    },
+    "actions": ["crop"]
     }
 }
