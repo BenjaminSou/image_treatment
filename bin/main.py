@@ -63,13 +63,26 @@ class file_downloader(AcquisitionStep):
         else:
             tagger.tags["actions"] = ""
         self.load_parameters_from("crop", tagger, name)
+        self.get_string_from("location", tagger, name)
         tagger.commit()
         tagger.copy("/home/mfdata/var/in/incoming/%s" % file_path[10:])
+
+    def get_string_from(self, key, xaf, name):
+        content = self.data[name].get(key)
+        if content:
+            xaf.tags[key] = content
+        else:
+            self.info('No "%s" parameter found in json of %s' % (key, name))
 
     def load_parameters_from(self, key, xaf, name):
         if self.data[name][key]:
             for label in self.data[name][key]:
                 xaf.tags[label] = self.data[name][key][label]
+
+    def print_log_creation(self):
+        if len(self.log_creation) > 1:
+            self.info(self.log_creation[0] + ", ".join(self.log_creation[1:]))
+            self.log_creation = [self.log_creation[0]]
 
     def run(self):
         """
@@ -85,8 +98,7 @@ class file_downloader(AcquisitionStep):
                                       self.data[data]["http_referer"])
                 else:
                     self.http_request(self.data[data]["url"], data)
-            self.info(self.log_creation[0] + ", ".join(self.log_creation[1:]))
-            self.log_creation = [self.log_creation[0]]
+            self.print_log_creation()
             sleep(60)
 
 
