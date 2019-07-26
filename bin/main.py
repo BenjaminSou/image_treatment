@@ -98,6 +98,7 @@ class file_downloader(AcquisitionStep):
         Differenciate refere and no header to
         get jpg images.
         """
+        print("\n-------------------  Starting main.py  -------------------")
         while True:
             for data in self.data:
                 if self.data[data]["http_referer"]:
