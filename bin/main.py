@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 
 
-from acquisition import AcquisitionStep
 import json
 import requests
+import shutil
+
+from PIL import Image
+from acquisition import AcquisitionStep
 from xattrfile import XattrFile
 from time import sleep
 from datetime import datetime
@@ -36,12 +39,12 @@ class file_downloader(AcquisitionStep):
         if header:
             request.headers.update({'referer': header})
         try:
-            request = request.get(url, timeout=2)
+            request = request.get(url, timeout=10)
         except (TimeoutError,
                 requests.exceptions.Timeout,
                 requests.exceptions.ConnectTimeout,
                 requests.exceptions.ReadTimeout):
-            self.warning('TIMEOUT: too much time to access "%s"' % url)
+            self.warning('TIMEOUT: "%s"' % url)
             return 1
         except requests.exceptions.ConnectionError:
             self.error('ConnectionError with "%s"' % url)
@@ -51,11 +54,25 @@ class file_downloader(AcquisitionStep):
                 with open(path, "wb") as filer:
                     self.file[name] = request.content
                     filer.write(self.file[name])
+                    if self.file_is_truncated(path):
+                        return 1
                     self.add_tags_and_copy(name, path)
                     self.log_creation.append(name)
         else:
-            self.warning("Error: request status = %s for url %s\nheader = %s"
-                         % (request.status_code, url, header))
+            self.warning("Error: request status = %s for url %s"
+                         % (request.status_code, url))
+
+    def file_is_truncated(self, file_path):
+        try:
+            image_file = Image.open(file_path)
+            image_file.close()
+        except IOError:
+            self.warning("IOError: Image %s truncated send to truncated folder"
+                         % file_path)
+            shutil.move(file_path,
+                        "truncated_files/truncated_" + file_path[10:])
+            return 1
+        return 0
 
     def add_tags_and_copy(self, name, file_path):
         """
@@ -98,7 +115,7 @@ class file_downloader(AcquisitionStep):
         Differenciate refere and no header to
         get jpg images.
         """
-        print("\n-------------------  Starting main.py  -------------------")
+        print("\n------------------  Starting main.py  -------------------")
         while True:
             for data in self.data:
                 if self.data[data]["http_referer"]:

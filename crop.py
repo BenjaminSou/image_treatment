@@ -32,8 +32,8 @@ class CropperMainStep(
         try:
             imageObject = Image.open(input_file.filepath)
         except IOError:
-            self.error("Can't open %s (%s)" % (input_file.filepath,
-                                               self.original_file_name))
+            self.error("IOError: Can't open %s (%s)"
+                       % (input_file.filepath, self.original_file_name))
             return 1
         if x + y + w + h:
             output = "cropped_%s" % (self.original_file_name)
@@ -45,7 +45,7 @@ class CropperMainStep(
                 imageObject.save("/home/mfdata/plugins/image_treatment/"
                                  "truncated_files/%s" % truncated_file_name)
                 imageObject.close()
-                self.error("truncated file %s sent to truncated_files dir"
+                self.error("OSError truncated file %s sent to truncated_files dir"
                            % truncated_file_name)
                 return 1
             cropped.save(output, format="jpeg")
