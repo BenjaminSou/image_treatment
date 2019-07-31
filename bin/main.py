@@ -18,7 +18,6 @@ class file_downloader(AcquisitionStep):
     plugin_step_name = "main"
 
     def __init__(self):
-        """Initialization: self.link needs the http request you seek."""
         self.data = self.get_json()
         self.file = dict()
         for name in self.data:
@@ -31,10 +30,12 @@ class file_downloader(AcquisitionStep):
         with open("urls.json") as file_url:
             return json.load(file_url)
 
-    def http_request(self, url, name, header=None):
+    def http_request(self, name):
         """Create new file from http get if not already existing."""
         now = datetime.now().strftime("%m_%d_%Y_%H:%M:%S")
-
+        url = self.data[name]["url"]
+        if "http_referer" in self.data[name]:
+            header = self.data[name]["http_referer"]
         request = requests.Session()
         if header:
             request.headers.update({'referer': header})
@@ -109,20 +110,10 @@ class file_downloader(AcquisitionStep):
             self.log_creation = [self.log_creation[0]]
 
     def run(self):
-        """
-        Run the program.
-
-        Differenciate refere and no header to
-        get jpg images.
-        """
         print("\n------------------  Starting main.py  -------------------")
         while True:
-            for data in self.data:
-                if self.data[data]["http_referer"]:
-                    self.http_request(self.data[data]["url"], data,
-                                      self.data[data]["http_referer"])
-                else:
-                    self.http_request(self.data[data]["url"], data)
+            for camera_name in self.data:
+                self.http_request(camera_name)
             self.print_log_creation()
             sleep(60)
 
