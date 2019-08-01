@@ -4,7 +4,6 @@
     "url": "http://www.cita.lu/info_trafic/cameras/images/cccam_95.jpg",
     "http_referer": "",
     "location": "49.636769,6.179700",
-    "crop":{},
     "actions": []
     },
 
@@ -13,12 +12,10 @@
     "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1059.thumbnail.jpg",
     "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
     "location": "49.636769,6.179700",
-    "crop":{
-        "crop_x": "0",
-        "crop_y": "30",
-        "crop_width": "240",
-        "crop_height": "180"
-    },
+    "crop_x": "0",
+    "crop_y": "30",
+    "crop_width": "240",
+    "crop_height": "180",
     "actions": ["crop"]
     },
 
@@ -27,11 +24,10 @@
     "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1033.thumbnail.jpg",
     "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
     "location": "45.773125,4.786751",
-    "crop":{
-        "crop_x": "0",
-        "crop_y": "30",
-        "crop_width": "240",
-        "crop_height": "180" },
+    "crop_x": "0",
+    "crop_y": "30",
+    "crop_width": "240",
+    "crop_height": "180",
     "actions": ["crop"]
     },
 
@@ -40,11 +36,10 @@
     "url": "http://www.meteobard.fr/Pixxerbase/Image%20Fixe/image.jpg",
     "http_referer": "",
     "location": "45.591021,4.002118",
-    "crop":{
-        "crop_x": "0",
-        "crop_y": "30",
-        "crop_width": "768",
-        "crop_height": "576"},
+    "crop_x": "0",
+    "crop_y": "30",
+    "crop_width": "768",
+    "crop_height": "576",
     "actions": ["crop"]
     },
 
@@ -53,11 +48,10 @@
     "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1037.thumbnail.jpg",
     "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
     "location": "45.773125,4.786751",
-    "crop":{
-        "crop_x": "0",
-        "crop_y": "20",
-        "crop_width": "240",
-        "crop_height": "140" },
+    "crop_x": "0",
+    "crop_y": "20",
+    "crop_width": "240",
+    "crop_height": "140",
     "actions": ["crop", "place"]
     },
 
@@ -66,12 +60,18 @@
     "url": "https://www.snow-forecast.com/webcams/Chapelco.jpg",
     "http_referer": "",
     "location": "-40.197717,-71.319058",
-    "crop":{
-        "crop_x": "0",
-        "crop_y": "0",
-        "crop_width": "426",
-        "crop_height": "325"
-    },
+    "crop_x": "0",
+    "crop_y": "0",
+    "crop_width": "426",
+    "crop_height": "325",
     "actions": ["crop"]
+    },
+
+    "VINCI":
+    {
+    "url": "http://gieat.viewsurf.com/?id=5576&action=mediaRedirect",
+    "http_referer": "",
+    "location": "-40.197717,-71.319058",
+    "actions": ["video"]
     }
 }
