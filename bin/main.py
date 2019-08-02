@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import json
 import requests
 import shutil
@@ -55,7 +54,7 @@ class file_downloader(AcquisitionStep):
                 with open(path, "wb") as filer:
                     self.file[name] = request.content
                     filer.write(self.file[name])
-                    self.add_tags_and_copy(name, path)
+                    self.add_tags_and_copy(name, path, now)
                     self.log_creation.append(name)
         else:
             self.warning("Error: request status = %s for url %s"
@@ -69,11 +68,11 @@ class file_downloader(AcquisitionStep):
             self.warning("IOError: Image %s truncated send to truncated folder"
                          % file_path)
             shutil.move(file_path,
-                        "truncated_files/truncated_" + file_path[10:])
+                        "files/truncated_files/truncated_" + file_path[10:])
             return 1
         return 0
 
-    def add_tags_and_copy(self, name, file_path):
+    def add_tags_and_copy(self, name, file_path, date):
         """
         Add tags to the given file.
 
@@ -81,6 +80,7 @@ class file_downloader(AcquisitionStep):
         Use load_parameters_from to get dict in json.
         """
         tagger = XattrFile(file_path)
+        tagger.tags["date"] = date
         self.load_parameters(tagger, name)
         tagger.commit()
         tagger.copy("/home/mfdata/var/in/incoming/%s" % file_path[10:])

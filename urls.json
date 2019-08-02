@@ -1,14 +1,16 @@
 {
     "Luxembourg-A1":
     {
+    "name":"Luxembourg",
     "url": "http://www.cita.lu/info_trafic/cameras/images/cccam_95.jpg",
     "http_referer": "",
     "location": "49.636769,6.179700",
-    "actions": []
+    "actions": ["ia"]
     },
 
     "Les-Littes-A72-PR2+170":
     {
+    "name":"Les-Littes",
     "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1059.thumbnail.jpg",
     "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
     "location": "49.636769,6.179700",
@@ -16,11 +18,12 @@
     "crop_y": "30",
     "crop_width": "240",
     "crop_height": "180",
-    "actions": ["crop"]
+    "actions": ["crop", "ia"]
     },
 
     "Valvert-A6-PR451+372":
     {
+    "name":"Valvert",
     "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1033.thumbnail.jpg",
     "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
     "location": "45.773125,4.786751",
@@ -28,11 +31,12 @@
     "crop_y": "30",
     "crop_width": "240",
     "crop_height": "180",
-    "actions": ["crop"]
+    "actions": ["crop", "ia"]
     },
 
     "Pic-de-Bard":
     {
+    "name":"Pic-de-Bard",
     "url": "http://www.meteobard.fr/Pixxerbase/Image%20Fixe/image.jpg",
     "http_referer": "",
     "location": "45.591021,4.002118",
@@ -40,11 +44,12 @@
     "crop_y": "30",
     "crop_width": "768",
     "crop_height": "576",
-    "actions": ["crop"]
+    "actions": ["crop", "ia"]
     },
 
     "Auxerre-N6-PR83+500":
     {
+    "name":"Auxerre",
     "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1037.thumbnail.jpg",
     "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
     "location": "45.773125,4.786751",
@@ -52,11 +57,12 @@
     "crop_y": "20",
     "crop_width": "240",
     "crop_height": "140",
-    "actions": ["crop", "place"]
+    "actions": ["crop", "ia"]
     },
 
     "Argentina-Chapelco":
     {
+    "name":"Argentina-Chapelco",
     "url": "https://www.snow-forecast.com/webcams/Chapelco.jpg",
     "http_referer": "",
     "location": "-40.197717,-71.319058",
@@ -64,14 +70,65 @@
     "crop_y": "0",
     "crop_width": "426",
     "crop_height": "325",
-    "actions": ["crop"]
+    "actions": ["ia"]
     },
 
-    "VINCI":
+    "Le_Mans":
     {
+    "name":"Le_Mans",
     "url": "http://gieat.viewsurf.com/?id=5576&action=mediaRedirect",
     "http_referer": "",
-    "location": "-40.197717,-71.319058",
-    "actions": ["video"]
+    "location": "48.040800,0.147869",
+    "actions": ["video", "ia"]
+    },
+
+
+    "Nantes":
+    {
+    "name":"Nantes",
+    "url": "http://gieat.viewsurf.com/?id=5562&action=mediaRedirect",
+    "http_referer": "",
+    "location": "47.267793,-1.564279",
+    "actions": ["video", "ia"]
+    },
+
+
+    "Bordeaux":
+    {
+    "name":"Bordeaux",
+    "url": "http://gieat.viewsurf.com/?id=15208&action=mediaRedirect",
+    "http_referer": "",
+    "location": "44.990028,-0.427081",
+    "actions": ["video", "ia"]
+    },
+
+
+    "Biarritz":
+    {
+    "name":"Biarritz",
+    "url": "http://gieat.viewsurf.com/?id=2810&action=mediaRedirect",
+    "http_referer": "",
+    "location": "43.425487,-1.593010",
+    "actions": ["video", "ia"]
+    },
+
+
+    "Perpignan":
+    {
+    "name":"Perpignan",
+    "url": "http://gieat.viewsurf.com/?id=15046&action=mediaRedirect",
+    "http_referer": "",
+    "location": "42.731088,2.881847",
+    "actions": ["video", "ia"]
+    },
+
+
+    "Toulouse":
+    {
+    "name":"Toulouse",
+    "url": "http://gieat.viewsurf.com/?id=2814&action=mediaRedirect",
+    "http_referer": "",
+    "location": "43.543798,1.502272",
+    "actions": ["video", "ia"]
     }
 }

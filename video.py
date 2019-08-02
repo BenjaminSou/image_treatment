@@ -5,10 +5,10 @@ from acquisition import AcquisitionStep
 from xattrfile import XattrFile
 
 
-class CropperMainStep(AcquisitionStep):
+class Image_treatmentVideoStep(AcquisitionStep):
 
-    plugin_name = "placer"
-    step_name = "place"
+    plugin_name = "image_treatment"
+    step_name = "video"
 
     def process(self, xaf):
         self.info("process for file %s" % xaf.filepath)
@@ -31,5 +31,5 @@ class CropperMainStep(AcquisitionStep):
 
 
 if __name__ == "__main__":
-    x = CropperMainStep()
+    x = Image_treatmentVideoStep()
     x.run()

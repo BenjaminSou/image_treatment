@@ -2,3 +2,5 @@
 # see https://pip.readthedocs.io/en/1.1/requirements.html
 requests
 pillow
+scikit-image
+numpy==1.16.4
