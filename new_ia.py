@@ -43,7 +43,6 @@ def main_function(path):
     data_exp = preprocess(data)
     prediction = model.predict(data_exp)
     pred_label = prediction[0]
-    elt = pred_label, tuple_data[1], tuple_data[2], tuple_data[0]
 
     return np.argmax(pred_label)
 
