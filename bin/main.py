@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import json
 import requests
 import shutil
@@ -51,13 +50,11 @@ class file_downloader(AcquisitionStep):
             self.error('ConnectionError with "%s"' % url)
         if request.status_code == 200:
             if request.content != self.file[name]:
-                path = "files/got/%s_%s.jpg" % (name, now)
+                path = "files/got/%s_%s" % (name, now)
                 with open(path, "wb") as filer:
                     self.file[name] = request.content
                     filer.write(self.file[name])
-                    if self.file_is_truncated(path):
-                        return 1
-                    self.add_tags_and_copy(name, path)
+                    self.add_tags_and_copy(name, path, now)
                     self.log_creation.append(name)
         else:
             self.warning("Error: request status = %s for url %s"
@@ -71,11 +68,11 @@ class file_downloader(AcquisitionStep):
             self.warning("IOError: Image %s truncated send to truncated folder"
                          % file_path)
             shutil.move(file_path,
-                        "truncated_files/truncated_" + file_path[10:])
+                        "files/truncated_files/truncated_" + file_path[10:])
             return 1
         return 0
 
-    def add_tags_and_copy(self, name, file_path):
+    def add_tags_and_copy(self, name, file_path, date):
         """
         Add tags to the given file.
 
@@ -83,26 +80,20 @@ class file_downloader(AcquisitionStep):
         Use load_parameters_from to get dict in json.
         """
         tagger = XattrFile(file_path)
-        if self.data[name]["actions"]:
-            tagger.tags["actions"] = ",".join(self.data[name]["actions"])
-        else:
-            tagger.tags["actions"] = ""
-        self.load_parameters_from("crop", tagger, name)
-        self.get_string_from("location", tagger, name)
+        tagger.tags["date"] = date
+        self.load_parameters(tagger, name)
         tagger.commit()
         tagger.copy("/home/mfdata/var/in/incoming/%s" % file_path[10:])
 
-    def get_string_from(self, key, xaf, name):
-        content = self.data[name].get(key)
-        if content:
-            xaf.tags[key] = content
-        else:
-            self.info('No "%s" parameter found in json of %s' % (key, name))
-
-    def load_parameters_from(self, key, xaf, name):
-        if self.data[name][key]:
-            for label in self.data[name][key]:
-                xaf.tags[label] = self.data[name][key][label]
+    def load_parameters(self, xaf, name):
+        for label in self.data[name]:
+            if isinstance(self.data[name][label], str):
+                xaf.tags[label] = self.data[name][label]
+            elif type(self.data[name][label]) == list:
+                xaf.tags[label] = ",".join(self.data[name][label])
+            else:
+                self.warning("%s %s: %s json label type"
+                             % (name, label, type(self.data[name][label])))
 
     def print_log_creation(self):
         if len(self.log_creation) > 1:

@@ -1,11 +1,8 @@
 # Specific directory to exclude:
 __pycache__/
-extra_unused/
 local/
-files/cropped/*
-files/got/*
-truncated_files/*
-bad_processed_files/*
+files/*
+test/
 
 # Specific files to exclude:
 config.ini~
