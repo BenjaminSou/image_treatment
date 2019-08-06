@@ -5,10 +5,10 @@ from PIL import Image
 from xattrfile import XattrFile
 
 
-class CropperMainStep(
+class Image_treatmentCropStep(
         AcquisitionStep):
 
-    plugin_name = "cropper"
+    plugin_name = "image_treatment"
     step_name = "crop"
 
     def process(self, xaf):
@@ -32,13 +32,8 @@ class CropperMainStep(
         try:
             imageObject = Image.open(input_file.filepath)
         except IOError:
-            bad_processed_file_name = ("bad_processed_%s"
-                                       % (self.original_file_name))
-            self.error("ERROR opening %s (%s), transfered to "
-                       "bad_processed_files"
-                       % (input_file.filepath, bad_processed_file_name))
-            imageObject.save("/home/mfdata/plugins/image_treatment/bad_"
-                             "processed_files%s" % (bad_processed_file_name))
+            self.error("IOError: Can't open %s (%s)"
+                       % (input_file.filepath, self.original_file_name))
             return 1
         if x + y + w + h:
             output = "cropped_%s" % (self.original_file_name)
@@ -48,9 +43,11 @@ class CropperMainStep(
                 truncated_file_name = ("truncated_%s"
                                        % (self.original_file_name))
                 imageObject.save("/home/mfdata/plugins/image_treatment/"
-                                 "truncated_files/%s" % truncated_file_name)
+                                 "files/truncated_files/%s"
+                                 % truncated_file_name)
                 imageObject.close()
-                self.error("truncated file %s sent to truncated_files dir"
+                self.error("OSError truncated file %s"
+                           "sent to truncated_files dir"
                            % truncated_file_name)
                 return 1
             cropped.save(output, format="jpeg")
@@ -70,7 +67,9 @@ class CropperMainStep(
                 del input_file.tags[b"crop_y"]
                 del input_file.tags[b"crop_width"]
                 del input_file.tags[b"crop_heigth"]
-            output_attr.tags[b"actions"] = output_attr.tags["actions"][5:]
+            output_attr.tags["actions"] = ",".join((output_attr.tags["actions"]
+                                                    .decode('utf-8'))
+                                                   .split(",")[1:])
             output_attr.commit()
             output_attr.move_or_copy("/home/mfdata/var/in/incoming/%s"
                                      % (output))
@@ -80,5 +79,5 @@ class CropperMainStep(
 
 
 if __name__ == "__main__":
-    x = CropperMainStep()
+    x = Image_treatmentCropStep()
     x.run()
