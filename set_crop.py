@@ -9,7 +9,7 @@ class Image_treatmentCropStep(
         AcquisitionStep):
 
     plugin_name = "image_treatment"
-    step_name = "crop"
+    step_name = "set_crop"
 
     def process(self, xaf):
         self.original_file_name = (xaf.tags["first.core.original_basename"]
@@ -68,9 +68,6 @@ class Image_treatmentCropStep(
                 del input_file.tags[b"crop_width"]
                 del input_file.tags[b"crop_heigth"]
             output_attr.tags[b"actions"] = output_attr.tags["actions"][5:]
-            output_attr.commit()
-            output_attr.move_or_copy("/home/mfdata/var/in/incoming/%s"
-                                     % (output))
         else:
             print("No crop options")
         imageObject.close()

@@ -67,7 +67,9 @@ class Image_treatmentCropStep(
                 del input_file.tags[b"crop_y"]
                 del input_file.tags[b"crop_width"]
                 del input_file.tags[b"crop_heigth"]
-            output_attr.tags[b"actions"] = output_attr.tags["actions"][5:]
+            output_attr.tags["actions"] = ",".join((output_attr.tags["actions"]
+                                                    .decode('utf-8'))
+                                                   .split(",")[1:])
             output_attr.commit()
             output_attr.move_or_copy("/home/mfdata/var/in/incoming/%s"
                                      % (output))

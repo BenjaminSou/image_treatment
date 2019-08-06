@@ -56,11 +56,14 @@ class Image_treatmentIaStep(AcquisitionStep):
         return str(np.argmax(pred_label))
 
     def add_weather(self, at):
-        del at.tags["actions"]
-        at.tags["weather"] = self.use_model(at.filepath)
-        at.move_or_copy("files/final/%s"
-                        % (at.tags["first.core.original_basename"]
-                           .decode("utf-8")))
+        at.tags["actions"] = ""
+        debug = self.use_model(at.filepath)
+        at.tags["weather"] = debug
+        new_file_name = (at.tags["first.core.original_basename"]
+                           .decode("utf-8"))
+        at.copy("/home/mfdata/plugins/image_treatment/files/final/%s"
+                % new_file_name)
+        at.move_or_copy("/home/mfdata/var/in/incoming/%s" % new_file_name)
 
 
 if __name__ == "__main__":

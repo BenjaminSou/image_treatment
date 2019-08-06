@@ -34,19 +34,6 @@
     "actions": ["crop", "ia"]
     },
 
-    "Pic-de-Bard":
-    {
-    "name":"Pic-de-Bard",
-    "url": "http://www.meteobard.fr/Pixxerbase/Image%20Fixe/image.jpg",
-    "http_referer": "",
-    "location": "45.591021,4.002118",
-    "crop_x": "0",
-    "crop_y": "30",
-    "crop_width": "768",
-    "crop_height": "576",
-    "actions": ["crop", "ia"]
-    },
-
     "Auxerre-N6-PR83+500":
     {
     "name":"Auxerre",
