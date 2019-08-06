@@ -3,6 +3,7 @@ __pycache__/
 local/
 files/*
 test/
+python3_virtualenv_sources/src/
 
 # Specific files to exclude:
 config.ini~
