@@ -4,7 +4,7 @@
     "name":"Luxembourg",
     "url": "http://www.cita.lu/info_trafic/cameras/images/cccam_95.jpg",
     "http_referer": "",
-    "location": "49.636769,6.179700",
+    "location": "49.636769 6.179700",
     "actions": ["ia"]
     },
 
@@ -13,7 +13,7 @@
     "name":"Les-Littes",
     "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1059.thumbnail.jpg",
     "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
-    "location": "49.636769,6.179700",
+    "location": "49.636769 6.179700",
     "crop_x": "0",
     "crop_y": "30",
     "crop_width": "240",
@@ -26,7 +26,7 @@
     "name":"Valvert",
     "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1033.thumbnail.jpg",
     "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
-    "location": "45.773125,4.786751",
+    "location": "45.773125 4.786751",
     "crop_x": "0",
     "crop_y": "30",
     "crop_width": "240",
@@ -39,7 +39,7 @@
     "name":"Auxerre",
     "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1037.thumbnail.jpg",
     "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
-    "location": "45.773125,4.786751",
+    "location": "45.773125 4.786751",
     "crop_x": "0",
     "crop_y": "20",
     "crop_width": "240",
@@ -52,7 +52,7 @@
     "name":"Argentina-Chapelco",
     "url": "https://www.snow-forecast.com/webcams/Chapelco.jpg",
     "http_referer": "",
-    "location": "-40.197717,-71.319058",
+    "location": "-40.197717 -71.319058",
     "crop_x": "0",
     "crop_y": "0",
     "crop_width": "426",
@@ -65,7 +65,7 @@
     "name":"Le_Mans",
     "url": "http://gieat.viewsurf.com/?id=5576&action=mediaRedirect",
     "http_referer": "",
-    "location": "48.040800,0.147869",
+    "location": "48.040800 0.147869",
     "actions": ["video", "ia"]
     },
 
@@ -75,7 +75,7 @@
     "name":"Nantes",
     "url": "http://gieat.viewsurf.com/?id=5562&action=mediaRedirect",
     "http_referer": "",
-    "location": "47.267793,-1.564279",
+    "location": "47.267793 -1.564279",
     "actions": ["video", "ia"]
     },
 
@@ -85,7 +85,7 @@
     "name":"Bordeaux",
     "url": "http://gieat.viewsurf.com/?id=15208&action=mediaRedirect",
     "http_referer": "",
-    "location": "44.990028,-0.427081",
+    "location": "44.990028r -0.427081",
     "actions": ["video", "ia"]
     },
 
@@ -95,7 +95,7 @@
     "name":"Biarritz",
     "url": "http://gieat.viewsurf.com/?id=2810&action=mediaRedirect",
     "http_referer": "",
-    "location": "43.425487,-1.593010",
+    "location": "43.425487 -1.593010",
     "actions": ["video", "ia"]
     },
 
@@ -105,7 +105,7 @@
     "name":"Perpignan",
     "url": "http://gieat.viewsurf.com/?id=15046&action=mediaRedirect",
     "http_referer": "",
-    "location": "42.731088,2.881847",
+    "location": "42.731088 2.881847",
     "actions": ["video", "ia"]
     },
 
@@ -115,7 +115,7 @@
     "name":"Toulouse",
     "url": "http://gieat.viewsurf.com/?id=2814&action=mediaRedirect",
     "http_referer": "",
-    "location": "43.543798,1.502272",
+    "location": "43.543798 1.502272",
     "actions": ["video", "ia"]
     }
 }

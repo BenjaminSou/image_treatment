@@ -80,7 +80,7 @@ class file_downloader(AcquisitionStep):
         Use load_parameters_from to get dict in json.
         """
         tagger = XattrFile(file_path)
-        tagger.tags["date"] = date
+        tagger.tags["date"] = datetime.now().strftime("%m-%d-%Y %H:%M:%S")
         self.load_parameters(tagger, name)
         tagger.commit()
         tagger.copy("/home/mfdata/var/in/incoming/%s" % file_path[10:])
