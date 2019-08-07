@@ -64,6 +64,7 @@ class Image_treatmentIaStep(AcquisitionStep):
         at.copy("/home/mfdata/plugins/image_treatment/files/final/%s"
                 % new_file_name)
         at.move_or_copy("/home/mfdata/var/in/incoming/%s" % new_file_name)
+        at.tags["actions"] = "db"
 
 
 if __name__ == "__main__":

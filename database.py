@@ -24,18 +24,23 @@ class Image_treatmentDatabaseStep(
                              "password=plugin_map_snow")
         cur = conn.cursor()
 
-        name_camera = at.tags["name"]
-        date = at.tags["date"]
-        location = at.tags["location"]
-        weather = at.tags["weather"]
-        image_path = at.tags[("files/final/%s"
-                              % at["first.core.original_basename"].
-                              convert("utf-8"))]
+        name_camera = at.tags["name"].decode("utf-8")
+        date = at.tags["date"].decode("utf-8")
+        location = "POINT(%s)" % at.tags["location"].decode("utf-8")
+        weather = at.tags["weather"].decode("utf-8")
+        image_path = ("files/final/%s"
+                      % at.tags["first.core.original_basename"]
+                      .decode("utf-8"))
 
-        cur.execut("INSERT INTO image"
-                   "(name_camera, date, location, weather, file_path)"
-                   "VALUES (%s, %s, %s, %s, %s);" %
-                   (name_camera, date, location, weather, image_path))
+        cur.execute("INSERT INTO image "
+                    "(name_camera, date, location, weather, file_path) "
+                    "VALUES ('%s', '%s', '%s', '%s', '%s');"
+                    % (name_camera, date, location, weather, image_path))
+        cur.execute("SELECT * FROM image;")
+        for line in cur.fetchall():
+            print(line)
+
+        conn.commit()
 
         cur.close()
         conn.close()
