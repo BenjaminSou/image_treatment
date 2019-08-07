@@ -117,5 +117,15 @@
     "http_referer": "",
     "location": "43.543798 1.502272",
     "actions": ["video", "ia"]
+    },
+
+
+    "Amiens":
+    {
+    "name":"Amiens",
+    "url": "http://gieat.viewsurf.com/?id=7404&action=mediaRedirect",
+    "http_referer": "",
+    "location": "49.859676 2.390441",
+    "actions": ["video", "ia"]
     }
 }
