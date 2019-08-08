@@ -127,5 +127,35 @@
     "http_referer": "",
     "location": "49.859676 2.390441",
     "actions": ["video", "ia"]
+    },
+
+
+    "Saint-Saëns":
+    {
+    "name":"Saint-Saëns",
+    "url": "http://gieat.viewsurf.com/?id=17776&action=mediaRedirect",
+    "http_referer": "",
+    "location": "49.639385 1.194470",
+    "actions": ["video", "ia"]
+    },
+
+
+    "Le Havre":
+    {
+    "name":"Le Havre",
+    "url": "http://gieat.viewsurf.com/?id=2718&action=mediaRedirect",
+    "http_referer": "",
+    "location": "49.333024 0.349815",
+    "actions": ["video", "ia"]
+    },
+
+
+    "Strasbourg":
+    {
+    "name":"Strasbourg",
+    "url": "http://gieat.viewsurf.com/?id=6964&action=mediaRedirect",
+    "http_referer": "",
+    "location": "48.769266 7.597200",
+    "actions": ["video", "ia"]
     }
 }
