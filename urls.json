@@ -157,5 +157,55 @@
     "http_referer": "",
     "location": "48.769266 7.597200",
     "actions": ["video", "ia"]
+    },
+
+
+    "Toul":
+    {
+    "name":"Toul",
+    "url": "http://gieat.viewsurf.com/?id=2748&action=mediaRedirect",
+    "http_referer": "",
+    "location": "48.621347 5.885644",
+    "actions": ["video", "ia"]
+    },
+
+
+    "Mulhouse":
+    {
+    "name":"Mulhouse",
+    "url": "http://gieat.viewsurf.com/?id=2784&action=mediaRedirect",
+    "http_referer": "",
+    "location": "47.744697 7.265182",
+    "actions": ["video", "ia"]
+    },
+
+
+    "Peage-Tunnel-Mont-Blanc":
+    {
+    "name":"Tunnel-Mont-Blanc",
+    "url": "http://gieat.viewsurf.com/?id=16922&action=mediaRedirect",
+    "http_referer": "",
+    "location": "45.901132 6.861352",
+    "actions": ["video", "ia"]
+    },
+
+
+    "Tunnel-Frejus":
+    {
+    "name":"Tunnel-Frejus",
+    "url": "http://gieat.viewsurf.com/?id=5463&action=mediaRedirect",
+    "http_referer": "",
+    "location": "45.195690 6.675824",
+    "actions": ["video", "ia"]
+    },
+
+
+    "Nice":
+    {
+    "name":"Nice",
+    "url": "http://gieat.viewsurf.com/?id=6984&action=mediaRedirect",
+    "http_referer": "",
+    "location": "43.732063 7.272464",
+    "actions": ["video", "ia"]
     }
 }
