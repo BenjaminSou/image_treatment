@@ -36,7 +36,8 @@ class Image_treatmentDatabaseStep(
                     "(name_camera, date, location, weather, file_path) "
                     "VALUES ('%s', '%s', '%s', '%s', '%s');"
                     % (name_camera, date, location, weather, image_path))
-        cur.execute("SELECT id, name_camera, date, ST_AsText(location), weather, file_path FROM image;")
+        cur.execute("SELECT id, name_camera, date, ST_AsText(location),"
+                    " weather, file_path FROM image;")
         for line in cur.fetchall():
             print(line)
 
