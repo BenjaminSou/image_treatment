@@ -10,23 +10,10 @@
 
     "Saint-Etienne":
     {
-    "name":"Les-Littes",
-    "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1059.thumbnail.jpg",
-    "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
-    "location": "45.450980 4.419035",
-    "crop_x": "0",
-    "crop_y": "30",
-    "crop_width": "240",
-    "crop_height": "180",
-    "actions": ["crop", "ia"]
-    },
-
-    "Valvert":
-    {
-    "name":"Valvert",
+    "name":"Saint-Etienne",
     "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1033.thumbnail.jpg",
     "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
-    "location": "45.773125 4.786751",
+    "location": "45.450558 4.419915",
     "crop_x": "0",
     "crop_y": "30",
     "crop_width": "240",
@@ -36,7 +23,7 @@
 
     "Lyon":
     {
-    "name":"Auxerre",
+    "name":"Lyon",
     "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1037.thumbnail.jpg",
     "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
     "location": "45.773125 4.786751",
@@ -60,9 +47,9 @@
     "actions": ["ia"]
     },
 
-    "Le_Mans":
+    "Le Mans":
     {
-    "name":"Le_Mans",
+    "name":"Le Mans",
     "url": "http://gieat.viewsurf.com/?id=5576&action=mediaRedirect",
     "http_referer": "",
     "location": "48.040800 0.147869",

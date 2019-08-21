@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from acquisition import AcquisitionStep
+import requests
 import numpy as np
 import keras
 import tensorflow as tf
@@ -57,15 +58,21 @@ class Image_treatmentIaStep(AcquisitionStep):
 
     def add_weather(self, at):
         at.tags["actions"] = ""
-        debug = self.use_model(at.filepath)
-        at.tags["weather"] = debug
+        at.tags["weather"] = self.use_model(at.filepath)
         new_file_name = (at.tags["first.core.original_basename"]
                            .decode("utf-8"))
         at.copy("/home/mfdata/plugins/image_treatment/files/final/%s"
                 % new_file_name)
         at.move_or_copy("/home/mfdata/var/in/incoming/%s" % new_file_name)
-        at.tags["actions"] = "db"
 
+        with open(("/home/mfdata/plugins/image_treatment/files/final/%s"
+                   % new_file_name), "rb") as file:
+            requests.put('http://localhost:18942/storage/map_snow/%s/%s.jpg'
+                         % (at.tags["date"].decode("utf-8")[:-9],
+                             new_file_name),
+                         data=file.read())
+
+        at.tags["actions"] = "db"
 
 if __name__ == "__main__":
     x = Image_treatmentIaStep()
