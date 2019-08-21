@@ -30,7 +30,7 @@
     "crop_x": "0",
     "crop_y": "30",
     "crop_width": "240",
-    "crop_hetttt": "180",
+    "crop_height": "180",
     "actions": ["crop", "ia"]
     },
 
@@ -132,7 +132,7 @@
 
     "Saint-Saens":
     {
-    "name":"Saint-Saëns",
+    "name":"Saint-Saens",
     "url": "http://gieat.viewsurf.com/?id=17776&action=mediaRedirect",
     "http_referer": "",
     "location": "49.639385 1.194470",
