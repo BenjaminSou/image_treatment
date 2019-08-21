@@ -51,9 +51,6 @@ class Image_treatmentCropStep(
                            % truncated_file_name)
                 return 1
             cropped.save(output, format="jpeg")
-            cropped.save("/home/mfdata/plugins/image_treatment/files/cropped/"
-                         "%s" % self.original_file_name,
-                         format="jpeg")
             cropped.close()
 
         # Xattr part
