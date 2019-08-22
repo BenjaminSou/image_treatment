@@ -63,7 +63,6 @@ class Image_treatmentIaStep(AcquisitionStep):
                            .decode("utf-8"))
         at.copy("/home/mfdata/plugins/image_treatment/files/final/%s"
                 % new_file_name)
-        at.move_or_copy("/home/mfdata/var/in/incoming/%s" % new_file_name)
 
         with open(("/home/mfdata/plugins/image_treatment/files/final/%s"
                    % new_file_name), "rb") as file:
@@ -73,6 +72,7 @@ class Image_treatmentIaStep(AcquisitionStep):
                          data=file.read())
 
         at.tags["actions"] = "db"
+        at.move_or_copy("/home/mfdata/var/in/incoming/%s" % new_file_name)
 
 if __name__ == "__main__":
     x = Image_treatmentIaStep()

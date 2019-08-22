@@ -5,3 +5,4 @@ pillow
 scikit-image
 numpy==1.16.4
 psycopg2
+opencv-python

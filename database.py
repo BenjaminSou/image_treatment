@@ -28,10 +28,9 @@ class Image_treatmentDatabaseStep(
         date = at.tags["date"].decode("utf-8")
         location = "POINT(%s)" % at.tags["location"].decode("utf-8")
         weather = at.tags["weather"].decode("utf-8")
-        image_path = ("%s"
-                      % at.tags["first.core.original_basename"]
+        image_path = (at.tags["first.core.original_basename"]
                       .decode("utf-8"))
-
+        print("##################### Passe ici ############")
         cur.execute("INSERT INTO image "
                     "(name_camera, date, location, weather, file_path) "
                     "VALUES ('%s', '%s', '%s', '%s', '%s');"
