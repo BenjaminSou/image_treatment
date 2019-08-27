@@ -194,5 +194,19 @@
     "http_referer": "",
     "location": "43.732063 7.272464",
     "actions": ["video", "ia"]
+    },
+
+
+    "Australie":
+    {
+    "name":"Australie",
+    "url": "https://www.snoweye.com/grabs/0006/35.jpg",
+    "http_referer": "",
+    "location": "-36.866437 147.271151",
+    "crop_x": "0",
+    "crop_y": "0",
+    "crop_width": "1024",
+    "crop_height": "570",
+    "actions": ["crop", "ia"]
     }
 }
