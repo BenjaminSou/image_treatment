@@ -1,212 +1,212 @@
 {
     "Luxembourg":
     {
-    "name":"Luxembourg",
-    "url": "http://www.cita.lu/info_trafic/cameras/images/cccam_95.jpg",
-    "http_referer": "",
-    "location": "49.636769 6.179700",
-    "actions": ["ia"]
+        "name":"Luxembourg",
+        "url": "http://www.cita.lu/info_trafic/cameras/images/cccam_95.jpg",
+        "http_referer": "",
+        "location": "49.636769 6.179700",
+        "actions": ["ia"]
     },
 
     "Saint-Etienne":
     {
-    "name":"Saint-Etienne",
-    "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1033.thumbnail.jpg",
-    "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
-    "location": "45.450558 4.419915",
-    "crop_x": "0",
-    "crop_y": "30",
-    "crop_width": "240",
-    "crop_height": "180",
-    "actions": ["crop", "ia"]
+        "name":"Saint-Etienne",
+        "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1033.thumbnail.jpg",
+        "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
+        "location": "45.450558 4.419915",
+        "crop_x": "0",
+        "crop_y": "30",
+        "crop_width": "240",
+        "crop_height": "180",
+        "actions": ["crop", "ia"]
     },
 
     "Lyon":
     {
-    "name":"Lyon",
-    "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1037.thumbnail.jpg",
-    "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
-    "location": "45.773125 4.786751",
-    "crop_x": "0",
-    "crop_y": "20",
-    "crop_width": "240",
-    "crop_height": "140",
-    "actions": ["crop", "ia"]
+        "name":"Lyon",
+        "url": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/streams/last/nce.1037.thumbnail.jpg",
+        "http_referer": "http://www.webcams-dir.centre-est.developpement-durable.gouv.fr/",
+        "location": "45.773125 4.786751",
+        "crop_x": "0",
+        "crop_y": "20",
+        "crop_width": "240",
+        "crop_height": "140",
+        "actions": ["crop", "ia"]
     },
 
     "Argentina-Chapelco":
     {
-    "name":"Argentina-Chapelco",
-    "url": "https://www.snow-forecast.com/webcams/Chapelco.jpg",
-    "http_referer": "",
-    "location": "-40.197717 -71.319058",
-    "crop_x": "0",
-    "crop_y": "0",
-    "crop_width": "426",
-    "crop_height": "325",
-    "actions": ["ia"]
+        "name":"Argentina-Chapelco",
+        "url": "https://www.snow-forecast.com/webcams/Chapelco.jpg",
+        "http_referer": "",
+        "location": "-40.197717 -71.319058",
+        "crop_x": "0",
+        "crop_y": "0",
+        "crop_width": "426",
+        "crop_height": "325",
+        "actions": ["ia"]
     },
 
     "Le Mans":
     {
-    "name":"Le Mans",
-    "url": "http://gieat.viewsurf.com/?id=5576&action=mediaRedirect",
-    "http_referer": "",
-    "location": "48.040800 0.147869",
-    "actions": ["video", "ia"]
+        "name":"Le Mans",
+        "url": "http://gieat.viewsurf.com/?id=5576&action=mediaRedirect",
+        "http_referer": "",
+        "location": "48.040800 0.147869",
+        "actions": ["video", "ia"]
     },
 
 
     "Nantes":
     {
-    "name":"Nantes",
-    "url": "http://gieat.viewsurf.com/?id=5562&action=mediaRedirect",
-    "http_referer": "",
-    "location": "47.267793 -1.564279",
-    "actions": ["video", "ia"]
+        "name":"Nantes",
+        "url": "http://gieat.viewsurf.com/?id=5562&action=mediaRedirect",
+        "http_referer": "",
+        "location": "47.267793 -1.564279",
+        "actions": ["video", "ia"]
     },
 
 
     "Bordeaux":
     {
-    "name":"Bordeaux",
-    "url": "http://gieat.viewsurf.com/?id=15208&action=mediaRedirect",
-    "http_referer": "",
-    "location": "44.990028 -0.427081",
-    "actions": ["video", "ia"]
+        "name":"Bordeaux",
+        "url": "http://gieat.viewsurf.com/?id=15208&action=mediaRedirect",
+        "http_referer": "",
+        "location": "44.990028 -0.427081",
+        "actions": ["video", "ia"]
     },
 
 
     "Biarritz":
     {
-    "name":"Biarritz",
-    "url": "http://gieat.viewsurf.com/?id=2810&action=mediaRedirect",
-    "http_referer": "",
-    "location": "43.425487 -1.593010",
-    "actions": ["video", "ia"]
+        "name":"Biarritz",
+        "url": "http://gieat.viewsurf.com/?id=2810&action=mediaRedirect",
+        "http_referer": "",
+        "location": "43.425487 -1.593010",
+        "actions": ["video", "ia"]
     },
 
 
     "Perpignan":
     {
-    "name":"Perpignan",
-    "url": "http://gieat.viewsurf.com/?id=15046&action=mediaRedirect",
-    "http_referer": "",
-    "location": "42.731088 2.881847",
-    "actions": ["video", "ia"]
+        "name":"Perpignan",
+        "url": "http://gieat.viewsurf.com/?id=15046&action=mediaRedirect",
+        "http_referer": "",
+        "location": "42.731088 2.881847",
+        "actions": ["video", "ia"]
     },
 
 
     "Toulouse":
     {
-    "name":"Toulouse",
-    "url": "http://gieat.viewsurf.com/?id=2814&action=mediaRedirect",
-    "http_referer": "",
-    "location": "43.543798 1.502272",
-    "actions": ["video", "ia"]
+        "name":"Toulouse",
+        "url": "http://gieat.viewsurf.com/?id=2814&action=mediaRedirect",
+        "http_referer": "",
+        "location": "43.543798 1.502272",
+        "actions": ["video", "ia"]
     },
 
 
     "Amiens":
     {
-    "name":"Amiens",
-    "url": "http://gieat.viewsurf.com/?id=7404&action=mediaRedirect",
-    "http_referer": "",
-    "location": "49.859676 2.390441",
-    "actions": ["video", "ia"]
+        "name":"Amiens",
+        "url": "http://gieat.viewsurf.com/?id=7404&action=mediaRedirect",
+        "http_referer": "",
+        "location": "49.859676 2.390441",
+        "actions": ["video", "ia"]
     },
 
 
     "Saint-Saens":
     {
-    "name":"Saint-Saens",
-    "url": "http://gieat.viewsurf.com/?id=17776&action=mediaRedirect",
-    "http_referer": "",
-    "location": "49.639385 1.194470",
-    "actions": ["video", "ia"]
+        "name":"Saint-Saens",
+        "url": "http://gieat.viewsurf.com/?id=17776&action=mediaRedirect",
+        "http_referer": "",
+        "location": "49.639385 1.194470",
+        "actions": ["video", "ia"]
     },
 
 
     "Le Havre":
     {
-    "name":"Le Havre",
-    "url": "http://gieat.viewsurf.com/?id=2718&action=mediaRedirect",
-    "http_referer": "",
-    "location": "49.333024 0.349815",
-    "actions": ["video", "ia"]
+        "name":"Le Havre",
+        "url": "http://gieat.viewsurf.com/?id=2718&action=mediaRedirect",
+        "http_referer": "",
+        "location": "49.333024 0.349815",
+        "actions": ["video", "ia"]
     },
 
 
     "Strasbourg":
     {
-    "name":"Strasbourg",
-    "url": "http://gieat.viewsurf.com/?id=6964&action=mediaRedirect",
-    "http_referer": "",
-    "location": "48.769266 7.597200",
-    "actions": ["video", "ia"]
+        "name":"Strasbourg",
+        "url": "http://gieat.viewsurf.com/?id=6964&action=mediaRedirect",
+        "http_referer": "",
+        "location": "48.769266 7.597200",
+        "actions": ["video", "ia"]
     },
 
 
     "Toul":
     {
-    "name":"Toul",
-    "url": "http://gieat.viewsurf.com/?id=2748&action=mediaRedirect",
-    "http_referer": "",
-    "location": "48.621347 5.885644",
-    "actions": ["video", "ia"]
+        "name":"Toul",
+        "url": "http://gieat.viewsurf.com/?id=2748&action=mediaRedirect",
+        "http_referer": "",
+        "location": "48.621347 5.885644",
+        "actions": ["video", "ia"]
     },
 
 
     "Mulhouse":
     {
-    "name":"Mulhouse",
-    "url": "http://gieat.viewsurf.com/?id=2784&action=mediaRedirect",
-    "http_referer": "",
-    "location": "47.744697 7.265182",
-    "actions": ["video", "ia"]
+        "name":"Mulhouse",
+        "url": "http://gieat.viewsurf.com/?id=2784&action=mediaRedirect",
+        "http_referer": "",
+        "location": "47.744697 7.265182",
+        "actions": ["video", "ia"]
     },
 
 
     "Peage-Tunnel-Mont-Blanc":
     {
-    "name":"Tunnel-Mont-Blanc",
-    "url": "http://gieat.viewsurf.com/?id=16922&action=mediaRedirect",
-    "http_referer": "",
-    "location": "45.901132 6.861352",
-    "actions": ["video", "ia"]
+        "name":"Tunnel-Mont-Blanc",
+        "url": "http://gieat.viewsurf.com/?id=16922&action=mediaRedirect",
+        "http_referer": "",
+        "location": "45.901132 6.861352",
+        "actions": ["video", "ia"]
     },
 
 
     "Tunnel-Frejus":
     {
-    "name":"Tunnel-Frejus",
-    "url": "http://gieat.viewsurf.com/?id=5463&action=mediaRedirect",
-    "http_referer": "",
-    "location": "45.195690 6.675824",
-    "actions": ["video", "ia"]
+        "name":"Tunnel-Frejus",
+        "url": "http://gieat.viewsurf.com/?id=5463&action=mediaRedirect",
+        "http_referer": "",
+        "location": "45.195690 6.675824",
+        "actions": ["video", "ia"]
     },
 
 
     "Nice":
     {
-    "name":"Nice",
-    "url": "http://gieat.viewsurf.com/?id=6984&action=mediaRedirect",
-    "http_referer": "",
-    "location": "43.732063 7.272464",
-    "actions": ["video", "ia"]
+        "name":"Nice",
+        "url": "http://gieat.viewsurf.com/?id=6984&action=mediaRedirect",
+        "http_referer": "",
+        "location": "43.732063 7.272464",
+        "actions": ["video", "ia"]
     },
 
 
     "Australie":
     {
-    "name":"Australie",
-    "url": "https://www.snoweye.com/grabs/0006/35.jpg",
-    "http_referer": "",
-    "location": "-36.866437 147.271151",
-    "crop_x": "0",
-    "crop_y": "0",
-    "crop_width": "1024",
-    "crop_height": "570",
-    "actions": ["crop", "ia"]
+        "name":"Australie",
+        "url": "https://www.snoweye.com/grabs/0006/35.jpg",
+        "http_referer": "",
+        "location": "-36.866437 147.271151",
+        "crop_x": "0",
+        "crop_y": "0",
+        "crop_width": "1024",
+        "crop_height": "570",
+        "actions": ["crop", "ia"]
     }
 }
