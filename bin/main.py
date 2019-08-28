@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import json
 import requests
 import shutil
@@ -9,6 +10,9 @@ from acquisition import AcquisitionStep
 from xattrfile import XattrFile
 from time import sleep
 from datetime import datetime
+
+MFDATA_DIR = os.environ["MFDATA_CURRENT_PLUGIN_DIR"]
+INCOMING_DIR = os.environ["MFDATA_NGINX_UPLOAD_DIR"]
 
 
 class file_downloader(AcquisitionStep):
@@ -29,12 +33,13 @@ class file_downloader(AcquisitionStep):
         with open("urls.json") as file_url:
             return json.load(file_url)
 
-    def http_request(self, name):
+    def http_request(self, key_name):
         """Create new file from http get if not already existing."""
         now = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
-        url = self.data[name]["url"]
-        if "http_referer" in self.data[name]:
-            header = self.data[name]["http_referer"]
+        url = self.data[key_name]["url"]
+
+        if "http_referer" in self.data[key_name]:
+            header = self.data[key_name]["http_referer"]
         request = requests.Session()
         if header:
             request.headers.update({'referer': header})
@@ -49,18 +54,19 @@ class file_downloader(AcquisitionStep):
         except requests.exceptions.ConnectionError:
             self.error('ConnectionError with "%s"' % url)
         if request.status_code == 200:
-            if request.content != self.file[name]:
-                path = "files/got/%s_%s" % (name, now)
+            if request.content != self.file[key_name]:
+                path = "files/got/%s_%s" % (key_name, now)
                 with open(path, "wb") as filer:
-                    self.file[name] = request.content
-                    filer.write(self.file[name])
-                    self.add_tags_and_copy(name, path)
-                    self.log_creation.append(name)
+                    self.file[key_name] = request.content
+                    filer.write(self.file[key_name])
+                    self.add_tags_and_copy(key_name, path)
+                    self.log_creation.append(key_name)
         else:
             self.warning("Error: request status = %s for url %s"
                          % (request.status_code, url))
 
     def file_is_truncated(self, file_path):
+        dir_path = file_path[10:]
         try:
             image_file = Image.open(file_path)
             image_file.close()
@@ -68,7 +74,7 @@ class file_downloader(AcquisitionStep):
             self.warning("IOError: Image %s truncated send to truncated folder"
                          % file_path)
             shutil.move(file_path,
-                        "files/truncated_files/truncated_" + file_path[10:])
+                        "files/truncated_files/truncated_" + dir_path[10:])
             return 1
         return 0
 
@@ -83,7 +89,7 @@ class file_downloader(AcquisitionStep):
         tagger.tags["date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.load_parameters(tagger, name)
         tagger.commit()
-        tagger.copy("/home/mfdata/var/in/incoming/%s" % file_path[10:])
+        tagger.copy(INCOMING_DIR + file_path[10:])
 
     def load_parameters(self, xaf, name):
         for label in self.data[name]:
