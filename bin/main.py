@@ -12,7 +12,7 @@ from time import sleep
 from datetime import datetime
 
 MFDATA_DIR = os.environ["MFDATA_CURRENT_PLUGIN_DIR"]
-INCOMING_DIR = os.environ["MFDATA_NGINX_UPLOAD_DIR"]
+INCOMING_DIR = os.environ["MFDATA_NGINX_UPLOAD_DIR"] + "/"
 
 
 class file_downloader(AcquisitionStep):

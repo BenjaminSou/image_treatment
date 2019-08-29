@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 
+import os
 from acquisition import AcquisitionStep
 from PIL import Image
 from xattrfile import XattrFile
+
+MFDATA_DIR = os.environ["MFDATA_CURRENT_PLUGIN_DIR"]
+INCOMING_DIR = os.environ["MFDATA_NGINX_UPLOAD_DIR"]
 
 
 class Image_treatmentCropStep(

@@ -208,5 +208,141 @@
         "crop_width": "1024",
         "crop_height": "570",
         "actions": ["crop", "ia"]
+    },
+
+    "Auxerre":
+    {
+        "name":"A6_Auxerre",
+        "url": "http://gieat.viewsurf.com?id=2742&action=mediaRedirect",
+        "http_referer": "",
+        "location": "47.795526 3.662107",
+        "actions": ["video", "ia"]
+    },
+
+    "Paris":
+    {
+        "name":"Paris Sud",
+        "url": "http://gieat.viewsurf.com?id=5610&action=mediaRedirect",
+        "http_referer": "",
+        "location": "48.826114 2.298626",
+        "actions": ["video", "ia"]
+    },
+
+    "Caen":
+    {
+        "name":"Caen",
+        "url": "http://gieat.viewsurf.com?id=2716&action=mediaRedirect",
+        "http_referer": "",
+        "location": "49.229473 -0.076505",
+        "actions": ["video", "ia"]
+    },
+
+    "Egleton":
+    {
+        "name":"Egleton",
+        "url": "http://gieat.viewsurf.com?id=15216&action=mediaRedirect",
+        "http_referer": "",
+        "location": "45.397275 1.983963",
+        "actions": ["video", "ia"]
+    },
+
+    "Cahors":
+    {
+        "name":"Cahors",
+        "url": "http://gieat.viewsurf.com?id=15220&action=mediaRedirect",
+        "http_referer": "",
+        "location": "44.382952 1.513166",
+        "actions": ["video", "ia"]
+    },
+
+    "Poitiers-Niort":
+    {
+        "name":"Poitiers-Niort",
+        "url": "http://gieat.viewsurf.com?id=15220&action=mediaRedirect",
+        "http_referer": "",
+        "location": "46.433953 -0.063514",
+        "actions": ["video", "ia"]
+    },
+
+    "Montpellier":
+    {
+        "name":"Montpellier",
+        "url": "http://gieat.viewsurf.com?id=2812&action=mediaRedirect",
+        "http_referer": "",
+        "location": "43.559176 3.826116",
+        "actions": ["video", "ia"]
+    },
+
+    "Aix-en-Provence":
+    {
+        "name":"Aix-en-Provence",
+        "url": "http://gieat.viewsurf.com?id=6980&action=mediaRedirect",
+        "http_referer": "",
+        "location": "43.516464 5.432526",
+        "actions": ["video", "ia"]
+    },
+
+    "Avignon":
+    {
+        "name":"Avignon",
+        "url": "http://gieat.viewsurf.com?id=15044&action=mediaRedirect",
+        "http_referer": "",
+        "location": "43.973074 4.895711",
+        "actions": ["video", "ia"]
+    },
+
+    "Millau":
+    {
+        "name":"Millau",
+        "url": "http://gieat.viewsurf.com?id=2824&action=mediaRedirect",
+        "http_referer": "",
+        "location": "44.068436 3.024889",
+        "actions": ["video", "ia"]
+    },
+
+    "Auvergne":
+    {
+        "name":"Auvergne",
+        "url": "http://gieat.viewsurf.com?id=2764&action=mediaRedirect",
+        "http_referer": "",
+        "location": "45.837791 3.160261",
+        "actions": ["video", "ia"]
+    },
+
+    "Reims":
+    {
+        "name":"Reims",
+        "url": "http://gieat.viewsurf.com?id=7042&action=mediaRedirect",
+        "http_referer": "",
+        "location": "49.247345 3.961634",
+        "actions": ["video", "ia"]
+    },
+
+    "Langres":
+    {
+        "name":"Langres",
+        "url": "http://gieat.viewsurf.com?id=2750&action=mediaRedirect",
+        "http_referer": "",
+        "location": "47.805137 5.224717",
+        "actions": ["video", "ia"]
+    },
+
+    "Dijon":
+    {
+        "name":"Dijon",
+        "url": "http://gieat.viewsurf.com?id=2782&action=mediaRedirect",
+        "http_referer": "",
+        "location": "47.301848 5.075138",
+        "actions": ["video", "ia"]
+    },
+
+    "Curban":
+    {
+        "name":"Curban",
+        "url": "http://gieat.viewsurf.com?id=6976&action=mediaRedirect",
+        "http_referer": "",
+        "location": "44.418266 5.988728",
+        "actions": ["video", "ia"]
     }
+
 }
