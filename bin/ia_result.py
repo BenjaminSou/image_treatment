@@ -44,9 +44,10 @@ class Image_treatmentIaStep(AcquisitionStep):
 
     def init(self):
         self.model = MobileNetV2(layers=layers,
-                                 weights=None, include_top=True, classes=3)
+                                 weights=None, include_top=True, classes=7)
         self.model.load_weights(PLUGIN_DIR +
-                                "/IA/MobileNet_5.weights.150-0.41.my_model")
+                                "/IA/MobileNetV2_Classif_with_7_labels.weights"
+                                ".973-2.57.my_model")
 
     def process(self, xaf):
         self.info("process for file %s" % xaf.filepath)

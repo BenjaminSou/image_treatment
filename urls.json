@@ -72,8 +72,12 @@
         "name":"Bordeaux",
         "url": "http://gieat.viewsurf.com/?id=15208&action=mediaRedirect",
         "http_referer": "",
+        "crop_x": "0",
+        "crop_y": "0",
+        "crop_width": "768",
+        "crop_height": "425",
         "location": "44.990028 -0.427081",
-        "actions": ["video", "ia"]
+        "actions": ["video", "crop", "ia"]
     },
 
 
