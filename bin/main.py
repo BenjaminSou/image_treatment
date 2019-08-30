@@ -112,7 +112,7 @@ class file_downloader(AcquisitionStep):
             for camera_name in self.data:
                 self.http_request(camera_name)
             self.print_log_creation()
-            sleep(60)
+            sleep(300)
 
 
 if __name__ == '__main__':
