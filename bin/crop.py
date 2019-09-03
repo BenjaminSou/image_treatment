@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import cv2
 from acquisition import AcquisitionStep
 from PIL import Image
 from xattrfile import XattrFile
@@ -34,6 +35,13 @@ class Image_treatmentCropStep(
             print(e, "(wrong crop var type)")
         # Cropping part
         try:
+            img = cv2.imread(input_file.filepath)
+            height, width, depth = img.shape
+            resized_image =\
+                cv2.resize(img, (1280, int(height * 1280 / width)))
+            cv2.imwrite(MFDATA_DIR + "/files/final/%s.jpg"
+                        % self.original_file_name, resized_image)
+
             imageObject = Image.open(input_file.filepath)
         except IOError:
             self.error("IOError: Can't open %s (%s)"
@@ -46,8 +54,7 @@ class Image_treatmentCropStep(
             except OSError:
                 truncated_file_name = ("truncated_%s"
                                        % (self.original_file_name))
-                imageObject.save("/home/mfdata/plugins/image_treatment/"
-                                 "files/truncated_files/%s"
+                imageObject.save(MFDATA_DIR + "files/truncated_files/%s"
                                  % truncated_file_name)
                 imageObject.close()
                 self.error("OSError truncated file %s"
@@ -72,7 +79,7 @@ class Image_treatmentCropStep(
                                                     .decode('utf-8'))
                                                    .split(",")[1:])
             output_attr.commit()
-            output_attr.move_or_copy("/home/mfdata/var/in/incoming/%s"
+            output_attr.move_or_copy(INCOMING_DIR + "/%s"
                                      % (output))
         else:
             print("No crop options")

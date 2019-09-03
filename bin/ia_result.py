@@ -5,6 +5,7 @@ import requests
 import numpy as np
 import keras
 import tensorflow as tf
+import cv2
 from keras import layers
 from keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input
 import os
@@ -68,11 +69,17 @@ class Image_treatmentIaStep(AcquisitionStep):
         at.tags["weather"] = self.use_model(at.filepath)
         new_file_name = (at.tags["first.core.original_basename"]
                            .decode("utf-8"))
-        at.copy(PLUGIN_DIR + "/files/final/%s"
-                % new_file_name)
+        new_file_path = PLUGIN_DIR + "/files/final/%s.jpg" % new_file_name
+        at.copy(new_file_path)
 
-        with open((PLUGIN_DIR + "/files/final/%s"
-                   % new_file_name), "rb") as file:
+        img = cv2.imread(new_file_path)
+        height, width, depth = img.shape
+        resized_image =\
+            cv2.resize(img, (1280, int(height * 1280 / width)))
+
+        cv2.imwrite(new_file_path, resized_image)
+
+        with open(new_file_path, "rb") as file:
             requests.put('http://localhost:%s/storage/map_snow/%s/%s.jpg'
                          % (LOCALHOST_PORT,
                             at.tags["date"].decode("utf-8")[:-9],

@@ -347,6 +347,14 @@
         "http_referer": "",
         "location": "44.418266 5.988728",
         "actions": ["video", "ia"]
-    }
+    },
 
+    "Beelden":
+    {
+        "name":"Beelden",
+        "url": "https://www.anwb.nl/cameras/camerabeelden/camerabeeld?paramImageNaam=Hattemerbroek",
+        "http_referer": "",
+        "location": "52.481598 6.014315",
+        "actions": ["ia"]
+    }
 }

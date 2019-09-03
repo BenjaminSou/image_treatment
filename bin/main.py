@@ -4,6 +4,7 @@ import os
 import json
 import requests
 import shutil
+import sys
 
 from PIL import Image
 from acquisition import AcquisitionStep
@@ -44,7 +45,7 @@ class file_downloader(AcquisitionStep):
         if header:
             request.headers.update({'referer': header})
         try:
-            request = request.get(url, timeout=10)
+            request = request.get(url, timeout=20)
         except (TimeoutError,
                 requests.exceptions.Timeout,
                 requests.exceptions.ConnectTimeout,
@@ -89,7 +90,10 @@ class file_downloader(AcquisitionStep):
         tagger.tags["date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.load_parameters(tagger, name)
         tagger.commit()
-        tagger.copy(INCOMING_DIR + file_path[10:])
+        if sys.getsizeof(self.file[name]) > 1000000:
+            tagger.move_or_copy(INCOMING_DIR + file_path[10:])
+        else:
+            tagger.copy(INCOMING_DIR + file_path[10:])
 
     def load_parameters(self, xaf, name):
         for label in self.data[name]:
