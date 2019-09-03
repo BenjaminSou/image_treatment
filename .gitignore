@@ -7,7 +7,6 @@ python3_virtualenv_sources/src/
 
 # Specific files to exclude:
 config.ini~
-crontab
 real.py
 header-files-4works.vim
 
