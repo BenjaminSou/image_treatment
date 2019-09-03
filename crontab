@@ -1,2 +1,2 @@
-0 0 * * * find $MFDATA_CURRENT_PLUGIN_DIR/files/ -mtime +7 -delete -type f
+0 0 * * * rm $MFDATA_CURRENT_PLUGIN_DIR/files/got/*
 0 0 * * * tar -cf $MFDATA_CURRENT_PLUGIN_DIR/files/final/$(date +\%Y_\%m_\%d).tar $/MFDATA_CURRENT_PLUGIN_DIR/files/final/* && rm $/MFDATA_CURRENT_PLUGIN_DIR/files/final/!(*.tar)
