@@ -356,5 +356,27 @@
         "http_referer": "",
         "location": "52.481598 6.014315",
         "actions": ["ia"]
+    },
+
+    "Belgique":
+    {
+        "name":"Belgique",
+        "url": "http://www.webcam-autoroute.eu/images/brussel_Camera_28.JPG",
+        "http_referer": "",
+        "location": "50.762835 4.508251",
+        "crop_x": "0",
+        "crop_y": "0",
+        "crop_width": "176",
+        "crop_height": "140",
+        "actions": ["crop", "ia"]
+    },
+
+    "Orlean":
+    {
+        "name":"Orlean",
+        "url": "http://gieat.viewsurf.com?id=5574&action=mediaRedirect",
+        "http_referer": "",
+        "location": "47.292707 2.044251",
+        "actions": ["video", "ia"]
     }
 }
