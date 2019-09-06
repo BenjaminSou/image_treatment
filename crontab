@@ -1,2 +1,1 @@
-0 0 * * * rm $MFDATA_CURRENT_PLUGIN_DIR/files/got/*
-0 0 * * * tar -cf $MFDATA_CURRENT_PLUGIN_DIR/files/final/$(date +\%Y_\%m_\%d).tar $MFDATA_CURRENT_PLUGIN_DIR/files/final/* && $MFDATA_CURRENT_PLUGIN_DIR/script_ftp.sh && rm $MFDATA_CURRENT_PLUGIN_DIR/files/final/!(*.tar)
+0 0 * * * {{MFDATA_HOME}}/bin/cronwrap.sh -l -e -- plugin_wrapper image_treatment tar -cf $MFDATA_CURRENT_PLUGIN_DIR/files/final/$(date +\%Y_\%m_\%d).tar $MFDATA_CURRENT_PLUGIN_DIR/files/final/* && sh $MFDATA_CURRENT_PLUGIN_DIR/script_ftp.sh && rm $MFDATA_CURRENT_PLUGIN_DIR/files/final/* && rm $MFDATA_CURRENT_PLUGIN_DIR/files/got/*
